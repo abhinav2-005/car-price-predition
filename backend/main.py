@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from valiadations import Valiadations
-from model import predict_price
+from backend.valiadations import Valiadations
+from backend.model import predict_price
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="car-price-prediction")
