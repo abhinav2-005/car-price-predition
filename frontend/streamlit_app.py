@@ -77,7 +77,7 @@ input_data = {
 
 if st.button("Predict price"):
     try:
-        res = requests.post(url=api_url,json=input_data,timeout=20)
+        res = requests.post(url="https://car-price-predition-zil4.onrender.com/predict",json=input_data,timeout=20)
 
         if res.status_code == 200:
             predtion = res.json()
