@@ -1,10 +1,17 @@
 import joblib
 import pandas as pd
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+MODEL_DIR = BASE_DIR / "models" / "pkl_files"
 
-ml_model = joblib.load("../models/pkl_files/model.pkl")
-scaler = joblib.load("../models/pkl_files/scaler.pkl")
-columns = joblib.load("../models/pkl_files/colums.pkl")
+ml_model = joblib.load(MODEL_DIR / "model.pkl")
+scaler = joblib.load(MODEL_DIR / "scaler.pkl")
+columns = joblib.load(MODEL_DIR / "colums.pkl")
+
+# ml_model = joblib.load("../models/pkl_files/model.pkl")
+# scaler = joblib.load("../models/pkl_files/scaler.pkl")
+# columns = joblib.load("../models/pkl_files/colums.pkl")
 
 
 def load_models(test_data : dict) -> pd.DataFrame:

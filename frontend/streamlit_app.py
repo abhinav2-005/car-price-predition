@@ -85,7 +85,8 @@ if st.button("Predict price"):
                st.success(f"Predicted Price: {predtion:,.2f}")
             else:
                 st.error("API connected, key error")
-
+        else:
+            st.error(res.status_code)
     except Exception as e:
         st.error("Api connection failed")
         st.code(str(e))
